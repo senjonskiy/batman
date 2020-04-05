@@ -1,8 +1,7 @@
 $(document).ready(function () {
     let tabsItem =$('.tabs-item'); 
-    console.log(tabsItem); //теперь табы можно отсдедить в инспекторе
-
-    tabsItem.on('click', function(event){ //при кдике срабатывает анонимная функция, внутри которой принимается параметр event
+    //console.log(tabsItem); //теперь табы можно отсдедить в инспекторе
+    tabsItem.on('click, touchstart', function(event){ //при кдике срабатывает анонимная функция, внутри которой принимается параметр event
         event.preventDefault(); //отменяет действие браузера по умолчанию в момент срабатывания события
         //console.log('Клик по табу'); //иначе бы в свою очередь при клике срабатывало поведение тега <а>, то есть ссылки
         let activeContent = $(this).attr('href');//название аттрибута Href из текущего элемента при событии
@@ -14,17 +13,14 @@ $(document).ready(function () {
     });
 
     $(window).scroll(function() {
-        //$(".header-wrap").addClass('header-fixed');
-        var top = $(document).scrollTop();
-        if (top < 40) {
-           $(".header").removeClass('header-fixed '); //animated  fadeIn TBD
-            $(".main").removeClass('main-magrin-patch');
-        }
+       var top = $(document).scrollTop();
+       if (top < 40) {
+          $(".header").removeClass('header-fixed '); //animated  fadeIn — TBD
+            $(".body").removeClass('header-magrin-patch');
+       }
         else {
-           $(".header").addClass('header-fixed');  //animated  fadeIn TBD
-            $(".main").addClass('main-magrin-patch');
-        
-        //main-magrin-patch
-        }
+          $(".header").addClass('header-fixed');  //animated  fadeIn — TBD
+            $(".body").addClass('header-magrin-patch');  
+       }
     });
 });
