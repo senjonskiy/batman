@@ -33,16 +33,46 @@ body{
 	margin:auto; /* Выравнивание по центру */
 }
 
-/* Стили для шапки */
+/* Стили для фиксированной шапки от Glo, стиль шапки не подменяется, скрипт не нужен 
 .header{
-	
+	position:fixed;
+	padding-top: 45px;
+	left:0;
+	top:0;  
+	width:100%; 
+} 
+
+.header-wrap{
+	display:flex; 
+	align-items:center;
+	justify-content: space-between;
+	padding-top:0;	
+} */
+
+/* Стили для фиксированной шапки, стиль шапки подменяется, скрипт нужен для отслеживания скроллинга */
+.header{
+	padding-top: 45px;
+	left:0;
+	top:0;  
+	width:100%; 
+} 
+
+.header-wrap{
 	display:flex; /*Создаю flex-контейнер. Делаю расположение элементов в строку друг за другом*/
 	align-items:center; /*Выравниваю по вертикали по центру вдоль воображаемой горизонтальной линии */
-	justify-content: space-between; /*  */
-	flex-direction: row; /*Изменяю стандартное горизонтальное направление на вертикальное, если меняю row на column: */
-	padding-top: 45px;
-	margin-bottom: 30%;
+	justify-content: space-between; /*  */	
+} 
+
+.header-fixed{
+	position:fixed;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	background: rgb(118, 118, 131);
+	z-index:1;
+	box-shadow: 0 0 20px rgba(0,0,0);	
 }
+
+
 
 .logo{
 	font-style: normal;
@@ -60,9 +90,7 @@ body{
 	flex:0.8;
 }
 
-.user{
-	/* flex:1; */
-}
+
 .search-input{
 	flex:1;
 	padding-top: 12px;
@@ -123,7 +151,15 @@ body{
 	outline:none; /*убираем рамку сфокусированного элемента */ 
 }
 
+/* блок в начале страницы, заменяющий обычную шапку, чтобы не смещался блок main 
+	при подмене на фиксированную шапку*/
+.main-magrin-patch{ 
+	display: inline-block;
+	margin-top: 90px;
+}
+
 .title{
+	margin-top: 35%;
 	font-family: Playfair Display;
 	font-style: normal;
 	font-weight: bold;
@@ -426,6 +462,7 @@ body{
 	}
 
 	.header{
+		
 		flex-wrap: wrap;
 	}
 	

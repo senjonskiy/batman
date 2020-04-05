@@ -12,4 +12,19 @@ $(document).ready(function () {
         $('.tabs-item-active').toggleClass('tabs-item-active');
         $(this).toggleClass('tabs-item-active');
     });
+
+    $(window).scroll(function() {
+        //$(".header-wrap").addClass('header-fixed');
+        var top = $(document).scrollTop();
+        if (top < 40) {
+           $(".header").removeClass('header-fixed '); //animated  fadeIn TBD
+            $(".main").removeClass('main-magrin-patch');
+        }
+        else {
+           $(".header").addClass('header-fixed');  //animated  fadeIn TBD
+            $(".main").addClass('main-magrin-patch');
+        
+        //main-magrin-patch
+        }
+    });
 });
