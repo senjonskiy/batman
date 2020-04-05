@@ -1,0 +1,485 @@
+/*
+Как пишется стиль?
+
+Создается Правило. 
+Правило состоит из Селектора и Блока Объявления Стилей. 
+Блок Объявления Стилей состоит из Свойств и их Значений.
+
+ПРИМЕР:
+
+ Селектор {
+	Свойство:Значение;
+ }
+
+*/
+
+*, *:before, *:after{
+	box-sizing:border-box;
+}
+
+body{
+	background:#0A090A;
+	color:#fff; /*свойство color для текста*/
+	font-family: 'Roboto', sans-serif; /*свойство font-family для текста в лого*/
+	background-image: url('../img/main-bg.png'); /*две точки т.к. надо выйти из папки css и зайти в папку img*/
+	background-repeat: no-repeat; /*здесь важно, чтобы картинка не повторялась, 
+	если прокрутка достигла ниже её конца. ни по горизонтали, ни по вертикали*/
+	background-position: top center;
+}
+
+.container{
+	/*border:1px solid red; /*рамка*/
+	max-width: 1140px; /* Максимальная ширина*/
+	margin:auto; /* Выравнивание по центру */
+}
+
+/* Стили для шапки */
+.header{
+	
+	display:flex; /*Создаю flex-контейнер. Делаю расположение элементов в строку друг за другом*/
+	align-items:center; /*Выравниваю по вертикали по центру вдоль воображаемой горизонтальной линии */
+	justify-content: space-between; /*  */
+	flex-direction: row; /*Изменяю стандартное горизонтальное направление на вертикальное, если меняю row на column: */
+	padding-top: 45px;
+	margin-bottom: 30%;
+}
+
+.logo{
+	font-style: normal;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 28px;
+	cursor:pointer;
+	/* flex:1; */
+}
+
+.search{
+	display:flex;
+	/* border:1px solid red; */
+	align-items:center;
+	flex:0.8;
+}
+
+.user{
+	/* flex:1; */
+}
+.search-input{
+	flex:1;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-left: 18px; 
+	background: rgba(196, 196, 196, 0.5);
+	border-radius: 5px;
+	border:none; /*убираем рамку */
+	color: #AEAEAE;
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+.search-input::-webkit-input-placeholder { /* Chrome */
+  color: #AEAEAE;
+}
+.search-input:-ms-input-placeholder { /* IE 10+ */
+  color: #AEAEAE;
+}
+.search-input::-moz-placeholder { /* Firefox 19+ */
+  color: #AEAEAE;
+  opacity: 1;
+}
+.search-input:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #AEAEAE;
+  opacity: 1;
+}
+
+.search-button{
+	background-color: transparent;
+	border: none;
+	padding: 10px 18px; /* При одном значении отступ выполняется со всех сторон */
+	cursor:pointer;
+}
+
+.user{
+	display: flex;
+}
+
+.avatar{
+	margin-left: 20px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%; /*скругление периметра картинки */
+	object-fit:cover; /*не растягивает картинку, а равномерно по пропорциям картинки заполняет ей пространство*/
+	cursor:pointer;
+}
+
+.bookmark{
+	cursor:pointer;
+}
+
+.button-default{
+	outline:none; /*убираем рамку сфокусированного элемента */ 
+}
+
+.title{
+	font-family: Playfair Display;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 48px;
+	line-height: 64px;
+	color: #FFFFFF;
+	margin-bottom: 7px;
+}
+
+.title-en{
+	display: inline-block;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 23px;
+	color: #787878;
+	margin-bottom:38px;
+}
+
+.info{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 108px;
+}
+
+.movie-info{
+	display:flex;
+	align-items: center;
+}
+
+.tag{
+	display: inline-block;
+	background: #FFFFFF;
+	border-radius: 3px;
+	padding: 5px 10px;
+	font-size: 16px;
+	line-height: 19px;
+	color:#333333;
+	margin-right:20px; /* "отодвинем соседний элемент на 20 пискелей вправо" */
+	cursor: pointer;
+}
+
+.country{
+	font-family: Roboto;
+	font-size:16px;
+	line-height:19px;
+	margin-right:33px;
+}
+
+.play{
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	line-height: 19px;
+	color: #FFFFFF;
+	text-decoration:none;
+}
+
+.play:hover{
+	color: #9c9999;
+}
+
+.play:before{
+	content:" ";
+	width:30px;
+	height: 30px;
+	background-image: url(../img/play.svg);
+	background-repeat:no-repeat; /* не забываю отменять повторение каритнки по вертикали и горизонтали */
+	background-size:100%; /* при 100% размер картинки соответствует размерам блока*/
+	margin-right: 15px;
+}
+
+.more{
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	line-height: 19px;
+	color: #FFFFFF;
+	text-decoration:none;
+}
+
+.more:hover{
+	color: #9c9999;
+}
+
+.more:after{
+	content:" ";
+	width:30px;
+	height: 30px;
+	background-image: url(../img/play.svg);
+	background-repeat:no-repeat; /* не забываю отменять повторение каритнки по вертикали и горизонтали */
+	background-size:100%; /* при 100% размер картинки соответствует размерам блока*/
+	margin-left: 15px;
+	transform: rotate(90deg);
+}
+
+.content{
+	display:flex;
+	justify-content: space-between;
+	background: #FFFFFF;
+	border-radius: 3px;
+	font-family: Roboto;
+	font-size: 16px;
+	line-height: 150%;
+	color: #000000;
+	padding: 3% 4%;
+}
+
+.short-info{
+	margin-right: 3%
+}
+
+.poster{
+	display: block;
+	margin-top: -40%;
+	margin-bottom:20px;
+}
+
+.button{
+	background: #FF8F27; 
+	padding: 10px 44px;
+	font-family: Roboto;
+	color: #FFFFFF;
+	font-size: 14px;
+	line-height: 16px;
+	border:none;
+	margin-bottom: 15px;
+	cursor:pointer;
+}
+
+.actors-title{
+	padding-left: 15px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 900;
+	font-size: 16px;
+	line-height: 150%;
+	margin-bottom: 10px;
+}
+
+.actors-list{
+	margin: 0;
+	list-style:none;
+	padding-left: 15px;
+	text-decoration: underline;
+	line-height: 150%;
+}
+
+.full-info{
+	flex:0.97;
+}
+
+.tabs-item{
+	color: #000000;
+	text-decoration: none;
+	font-size: 18px;
+	line-height: 21px;
+}
+
+.tabs-item:hover{
+	color: #757474;
+}
+
+
+.tabs-item:not(:last-child){
+	margin-right: 4%;
+}
+
+.tabs-item-active{
+	color: #FF8F27;
+}
+
+.tabs-bookmark{
+	cursor:pointer;
+}
+
+.full-content{
+	display:flex;
+	justify-content: space-between;
+}
+
+.tabs-content{
+	margin-right: 78px;
+	display: none;
+}
+
+.visible{
+	display: block;
+}
+
+.text{
+	font-size: 16px;
+	line-height: 140%;
+	margin-top:0;
+}
+
+.tabs{
+	display:flex;
+	align-items: center;
+	margin-bottom: 4%;
+}
+
+.subscribe-title{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 900;
+	font-size: 16px;
+	line-height: 150%;
+	color: #000000;
+}
+
+.subscribe-form{
+	display:flex;
+	margin-bottom: 48px;
+}
+
+.subscribe-input{
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-left: 18px; 
+	outline:none;
+	background: rgba(196, 196, 196, 0.5);
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	border:none; /*убираем рамку */
+	color: #AEAEAE;
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+.subscribe-button{
+	padding: 12px;
+	outline:none;
+	border:none; 
+	background: #FF8F27;
+	border-radius: 0px 5px 5px 0px;
+	cursor: pointer;
+}
+
+@media (max-width: 1200px){
+	.container{
+		max-width: 960px;
+	}
+	.tabs-item{
+		font-size: 16px;
+	}
+}
+
+@media(max-width: 992px){
+	.container{
+		max-width: 780px;
+	}
+	.tabs{
+		flex-wrap: wrap;
+	}
+	.tabs-item{
+		flex-basis: 20%
+	}
+	.full-content{
+		flex-wrap:wrap;
+	}
+	.tabs-content{
+		margin-bottom: 4%
+	}
+	.text{
+		font-size: 14px;
+	}
+	.actors-list{
+		font-size: 14px;
+	}
+}
+
+@media(max-width: 768px){
+	.container{
+		max-width: 700px;
+	}
+	.more{
+		display:none;
+	}
+	.tabs-item{
+		flex-basis: 33%
+	}
+	.bookmark{
+		display: none;
+	}
+	.tabs-content{
+		margin-right: 0;
+	}
+}
+
+@media(max-width: 578px){
+	.container{
+		width:90%;
+	}
+
+	.header{
+		flex-wrap: wrap;
+	}
+	
+	.search{
+		flex-basis: 100%;
+		order:3;
+		margin-top: 5%;
+		align-items: center;
+	}
+
+	.country{		
+		margin-right: 100px;
+	}
+	
+
+	.content{
+		flex-wrap: wrap;
+		width:100%;
+	}
+
+	.short-info{
+		margin-bottom: 5%;
+		margin-right:0;
+	}
+
+	.poster{
+		width: 100%;
+		display: inline-block;
+	}
+
+	.button{
+		width:100%;
+	}
+
+	.actors-list, .actors-title, .bookmark{
+		display:none;
+	}
+	
+	.tabs-content{
+		margin-right: -11px;
+	}
+
+	.movie-info{
+		 display: flex; /*делаем из блока флекс-контейнер */
+		 flex-wrap: wrap;
+	}
+
+	.play{
+		flex-basis: 100%; /* начальный размер — сто процентов от размера родителя */
+		margin-top: 4%;
+	}
+
+	.subscribe{
+		margin: auto; /* выравнивание по центру элемента subscribe относительно родителя
+			full-info */
+	}
+}
