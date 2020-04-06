@@ -14,6 +14,8 @@
 */
 
 *, *:before, *:after{
+	margin:0;
+	padding:0;
 	box-sizing:border-box;
 }
 
@@ -51,10 +53,15 @@ body{
 
 /* Стили для фиксированной шапки, стиль шапки подменяется, скрипт нужен для отслеживания скроллинга */
 .header{
-	padding-top: 25px;
+	padding-top: 11px;
 	left:0;
 	top:0;  
-	width:100%; 
+	width:100%;
+	position:fixed;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	z-index:1;
+	
 } 
 
 .header-wrap{
@@ -62,13 +69,9 @@ body{
 	align-items:center; /*Выравниваю по вертикали по центру вдоль воображаемой горизонтальной линии */
 	justify-content: space-between; /*  */	
 } 
-
+	
 .header-fixed{
-	position:fixed;
-	padding-top: 13px;
-	padding-bottom: 11px;
 	background: rgb(118, 118, 131);
-	z-index:1;
 	box-shadow: 0 0 20px rgba(0,0,0);	
 }
 
@@ -76,7 +79,7 @@ body{
 	при подмене на фиксированную шапку*/
 .header-magrin-patch{ 
 	display: inline-block;
-	margin-top: 75px;
+	margin-top: 55px;
 	margin-left:auto; /* без этого свойства весь контейнер смещается чуть вправо */
 	width:100%; /* без этого свойства весь контейнер влево к началу окна браузера */
 	overflow-x: hidden; /*прятать содержимое, выступающее за границы окна по горизонтали*/
