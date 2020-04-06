@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let tabsItem =$('.tabs-item'); 
+    let tabsItem = $('.tabs-item'); 
     //console.log(tabsItem); //теперь табы можно отсдедить в инспекторе
     tabsItem.on('click touchstart', function(event){ //при кдике срабатывает анонимная функция, внутри которой принимается параметр event
         event.preventDefault(); //отменяет действие браузера по умолчанию в момент срабатывания события
@@ -15,12 +15,11 @@ $(document).ready(function () {
     $(window).scroll(function() {
        var top = $(document).scrollTop();
        if (top < 20) {
-          $(".header").removeClass('header-fixed '); //animated  fadeIn — TBD
-          $(".body").removeClass('header-magrin-patch');
-       }
-        else {
-          $(".header").addClass('header-fixed');  //animated  fadeIn — TBD
-          $(".body").addClass('header-magrin-patch');  
+         $(".header").removeClass('header-fixed'); //animated  fadeIn — TBD
+         $(".body").removeClass('header-magrin-patch');
+       } else { 
+         $(".header").addClass('header-fixed');  //animated  fadeIn — TBD
+         $(".body").addClass('header-magrin-patch');  
        }
     });
 });
