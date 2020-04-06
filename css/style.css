@@ -51,7 +51,7 @@ body{
 
 /* Стили для фиксированной шапки, стиль шапки подменяется, скрипт нужен для отслеживания скроллинга */
 .header{
-	padding-top: 45px;
+	padding-top: 25px;
 	left:0;
 	top:0;  
 	width:100%; 
@@ -65,7 +65,7 @@ body{
 
 .header-fixed{
 	position:fixed;
-	padding-top: 11px;
+	padding-top: 13px;
 	padding-bottom: 11px;
 	background: rgb(118, 118, 131);
 	z-index:1;
@@ -74,12 +74,13 @@ body{
 
 /* блок в начале страницы у body, заменяющий обычную шапку, чтобы не смещался блок main 
 	при подмене на фиксированную шапку*/
-	.header-magrin-patch{ 
-		display: inline-block;
-		margin-top: 90px;
-		margin-left:auto; /* без этого свойства весь контейнер смещается чуть вправо */
-		width:100%; /* без этого свойства весь контейнер влево к началу окна браузера */
-	}
+.header-magrin-patch{ 
+	display: inline-block;
+	margin-top: 75px;
+	margin-left:auto; /* без этого свойства весь контейнер смещается чуть вправо */
+	width:100%; /* без этого свойства весь контейнер влево к началу окна браузера */
+	overflow-x: hidden; /*прятать содержимое, выступающее за границы окна по горизонтали*/
+}
 
 .logo{
 	font-style: normal;
