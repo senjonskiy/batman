@@ -67,7 +67,8 @@ body{
 .header-wrap{
 	display:flex; /*Создаю flex-контейнер. Делаю расположение элементов в строку друг за другом*/
 	align-items:center; /*Выравниваю по вертикали по центру вдоль воображаемой горизонтальной линии */
-	justify-content: space-between; /*  */	
+	justify-content: space-between; /*  */
+	
 } 
 	
 .header-fixed{
@@ -467,8 +468,7 @@ body{
 		width:90%;
 	}
 
-	.header{
-		
+	.header-wrap{	
 		flex-wrap: wrap;
 	}
 	
@@ -478,11 +478,20 @@ body{
 		margin-top: 5%;
 		align-items: center;
 	}
+	
+	.movie-info{
+		display: flex; /*делаем из блока флекс-контейнер */
+		flex-wrap: wrap;
+    }
+
+    .play{
+	   flex-basis: 100%; /* начальный размер — сто процентов от размера родителя */
+	   margin-top: 4%;
+    }
 
 	.country{		
 		margin-right: 100px;
 	}
-	
 
 	.content{
 		flex-wrap: wrap;
@@ -490,13 +499,15 @@ body{
 	}
 
 	.short-info{
-		margin-bottom: 5%;
-		margin-right:0;
+		display: inline-block;
+		margin:auto;
+		width:80%;
 	}
 
-	.poster{
-		width: 100%;
+	.poster{	
 		display: inline-block;
+		width: 100%;
+		padding-top: 80px;
 	}
 
 	.button{
@@ -506,19 +517,13 @@ body{
 	.actors-list, .actors-title, .bookmark{
 		display:none;
 	}
-	
-	.tabs-content{
-		margin-right: -11px;
+
+	.full-info{
+		margin:auto;
 	}
 
-	.movie-info{
-		 display: flex; /*делаем из блока флекс-контейнер */
-		 flex-wrap: wrap;
-	}
-
-	.play{
-		flex-basis: 100%; /* начальный размер — сто процентов от размера родителя */
-		margin-top: 4%;
+	.tabs{
+		padding-left: 75px;
 	}
 
 	.subscribe{
